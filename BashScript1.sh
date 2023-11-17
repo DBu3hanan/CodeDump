@@ -1,5 +1,5 @@
 #!/bin/bash
-#Diamond Buchanan - 2102369
+
 if [ $# -eq 0 ]; then
   read -p "Enter your name: " name #Correction: changed 'user_name' to 'name'.
 else
