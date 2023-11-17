@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Code determines if a word has more vowels than consonants and if the word is a palindrome
 if [ $# -eq 0 ]; then
   read -p "Enter your name: " name #Correction: changed 'user_name' to 'name'.
 else
