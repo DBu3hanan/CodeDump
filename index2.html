@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option {
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .correct {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>HTML Quiz</h2>
+    <form id="quizForm">
+        <div class="question">1. What does HTML stand for?</div>
+        <ul class="options">
+            <li class="option"><input type="radio" name="q1" value="a"> <span class="correct">Hyper Text Markup Language</span></li>
+            <li class="option"><input type="radio" name="q1" value="b"> Hyperlinks and Text Markup Language</li>
+            <li class="option"><input type="radio" name="q1" value="c"> Home Tool Markup Language</li>
+        </ul>
+
+        <div class="question">2. Which tag is used for creating a hyperlink in HTML?</div>
+        <ul class="options">
+            <li class="option"><input type="radio" name="q2" value="a"> <span class="correct">&lt;a&gt;</span></li>
+            <li class="option"><input type="radio" name="q2" value="b"> &lt;link&gt;</li>
+            <li class="option"><input type="radio" name="q2" value="c"> &lt;href&gt;</li>
+        </ul>
+
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </form>
+</div>
+
+<script>
+    function submitQuiz() {
+        // You can add your logic to calculate the score or display results here
+        alert('Quiz Submitted!');
+    }
+</script>
+
+</body>
+</html>
