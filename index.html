@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+</head>
+
+<body>
+
+  <h1>Countdown Timer</h1>
+
+  <label for="startDate">Start Date and Time:</label>
+  <input type="datetime-local" id="startDate">
+
+  <label for="endDate">End Date and Time:</label> 
+  <input type="datetime-local" id="endDate">
+
+  <button onclick="startCountdown()">Start</button>
+
+  <div id="countdown"></div>
+
+  <script>
+    function setEndDate(endDate) {
+      localStorage.setItem("endDate", endDate);
+    }
+
+    function getEndDate() {
+      return localStorage.getItem("endDate"); 
+    }
+
+    function startCountdown() {
+      var endDate = new Date(document.getElementById("endDate").value); 
+      setEndDate(endDate);
+
+      var interval = setInterval(function() {
+        var now = new Date().getTime();
+        var timeLeft = endDate - now;
+
+        // calculate time
+        var days = Math.floor(timeLeft / 86400000); 
+        var hours = Math.floor((timeLeft % 86400000) / 3600000);
+        var minutes = Math.floor((timeLeft % 3600000) / 60000);
+        var seconds = Math.floor((timeLeft % 60000) / 1000);
+
+        // display
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s";
+
+        if (timeLeft < 0) {
+          clearInterval(interval);
+          localStorage.removeItem("endDate"); 
+        }
+      }, 1000);
+
+      localStorage.setItem("interval", interval);
+    }
+
+    window.onload = function() {
+  if (interval && endDate) {
+    startCountdown(); 
+    console.log('resuming'); // check if this logs
+  }
+}
+  </script>
+
+</body>
+</html>
